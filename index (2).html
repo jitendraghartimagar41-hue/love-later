@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You Animation</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff0f5;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    /* Heart animation */
+    .heart {
+      width: 100px;
+      height: 90px;
+      background: red;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+    }
+
+    /* Text under heart */
+    .text {
+      margin-top: 20px;
+      font-size: 2rem;
+      color: #d00000;
+      animation: fade 2s infinite alternate;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+
+    /* Cute cat */
+    .cat {
+      margin-top: 40px;
+      font-size: 4rem;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .cat-speech {
+      margin-top: 10px;
+      background: #ffe4e1;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+  <div class="text">I ❤️ You</div>
+  <div class="cat">🐱</div>
+  <div class="cat-speech">Meow~ I love you! 💕</div>
+</body>
+</html>
